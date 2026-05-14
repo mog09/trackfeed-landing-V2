@@ -96,7 +96,7 @@ export default function LandingPage() {
         }
         .stats-inner {
           max-width: 900px; margin: 0 auto;
-          display: grid; grid-template-columns: repeat(4, 1fr);
+          display: grid; grid-template-columns: repeat(3, 1fr);
         }
         .stat { text-align: center; padding: 0 24px; border-right: 0.5px solid #D2D2D7; }
         .stat:last-child { border-right: none; }
@@ -218,8 +218,9 @@ export default function LandingPage() {
           .nav-links { display: none; }
           .nav { padding: 0 20px; }
           .hero { padding: 100px 20px 70px; }
-          .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-          .stat { border-right: none; }
+          .stats-inner { grid-template-columns: 1fr; gap: 24px; }
+          .stat { border-right: none; border-bottom: 0.5px solid #D2D2D7; padding-bottom: 20px; }
+          .stat:last-child { border-bottom: none; }
           .mockup-section { grid-template-columns: 1fr; gap: 48px; padding: 70px 20px; }
           .steps { grid-template-columns: 1fr; gap: 2px; }
           .step:first-child { border-radius: 16px 16px 0 0; }
@@ -235,6 +236,7 @@ export default function LandingPage() {
         }
       `}</style>
 
+      {/* NAV */}
       <nav className="nav">
         <div className="nav-logo">TrackFeed</div>
         <div className="nav-links">
@@ -245,10 +247,15 @@ export default function LandingPage() {
         <a href="https://stallion-alert-v2.vercel.app/login" className="nav-cta">Get Started</a>
       </nav>
 
+      {/* HERO */}
       <section className="hero">
         <div className="hero-eyebrow">Australian Thoroughbred Racing Intelligence</div>
-        <h1 className="hero-title">Know the moment<br />your <span>stallion wins.</span></h1>
-        <p className="hero-sub">Real-time winner alerts to your Telegram. Filter by sire, trainer, race class, state and more. No noise — just the results that matter.</p>
+        <h1 className="hero-title">
+          Know the moment your horse <span>wins.</span>
+        </h1>
+        <p className="hero-sub">
+          Real-time winner alerts to your Telegram. Filter by sire, trainer, race class, state and more. No noise — just the results that matter.
+        </p>
         <div className="hero-actions">
           <a href="#pricing" className="btn-primary">Start Free Trial</a>
           <a href="#how-it-works" className="btn-ghost">See how it works →</a>
@@ -256,21 +263,31 @@ export default function LandingPage() {
         <p className="hero-note">No credit card required · 7-day free trial · Cancel anytime</p>
       </section>
 
+      {/* STATS */}
       <div className="stats-bar">
         <div className="stats-inner">
-          <div className="stat"><div className="stat-num"><span>3</span> min</div><div className="stat-label">Alert polling interval</div></div>
-          <div className="stat"><div className="stat-num">All <span>5</span></div><div className="stat-label">Australian states covered</div></div>
-          <div className="stat"><div className="stat-num"><span>13</span>+</div><div className="stat-label">Filter types available</div></div>
-          <div className="stat"><div className="stat-num"><span>0</span>s</div><div className="stat-label">Delay after result confirmed</div></div>
+          <div className="stat">
+            <div className="stat-num"><span>3</span> min</div>
+            <div className="stat-label">Alert polling interval</div>
+          </div>
+          <div className="stat">
+            <div className="stat-num">All <span>5</span></div>
+            <div className="stat-label">Australian states covered</div>
+          </div>
+          <div className="stat">
+            <div className="stat-num"><span>13</span>+</div>
+            <div className="stat-label">Filter types available</div>
+          </div>
         </div>
       </div>
 
+      {/* ALERT MOCKUP */}
       <section className="mockup-section">
         <div className="mockup-text">
           <div className="tag">Live Alerts</div>
           <h2>Instant. Professional. On your phone.</h2>
           <p>The moment a winner matches your filters, TrackFeed fires a Telegram alert with full breeding details, race information, and exactly which of your filters triggered it.</p>
-          <p style={{ color: '#AEAEB2', fontSize: 14 }}>No app to download. Telegram delivers instantly to iOS and Android.</p>
+          <p style={{ color: '#AEAEB2', fontSize: 14 }}>Delivered via Telegram — works on any device, no additional apps required.</p>
         </div>
         <div className="phone-wrap">
           <div className="phone">
@@ -304,6 +321,7 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* HOW IT WORKS */}
       <section className="how-section" id="how-it-works">
         <div className="how-inner">
           <div className="section-tag">How It Works</div>
@@ -328,6 +346,7 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* FILTERS */}
       <section className="filters-section" id="filters">
         <div className="section-tag">Filter By Anything</div>
         <h2 className="section-title">Your intelligence.<br />Your rules.</h2>
@@ -369,6 +388,7 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* WHO IT'S FOR */}
       <section className="who-section">
         <div className="who-inner">
           <div className="section-tag">Built For</div>
@@ -381,13 +401,13 @@ export default function LandingPage() {
             </div>
             <div className="who-card">
               <div className="who-tag">Bloodstock Agents</div>
-              <div className="who-title">Monitor every horse you represent.</div>
-              <p className="who-desc">Track horses you've sold, clients you represent, and bloodlines you follow — all in real time.</p>
+              <div className="who-title">Be on the front foot with racetrack results.</div>
+              <p className="who-desc">Know the information before your clients do.</p>
             </div>
             <div className="who-card">
               <div className="who-tag">Breeders</div>
-              <div className="who-title">Watch your progeny race.</div>
-              <p className="who-desc">Get instant notification when a stakes race is won by a horse you bred or a dam you own.</p>
+              <div className="who-title">Stay up to date with stallions.</div>
+              <p className="who-desc">Track their performance in Stakes races and stay ahead of the market.</p>
             </div>
             <div className="who-card">
               <div className="who-tag">Racing Media</div>
@@ -408,6 +428,7 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* PRICING */}
       <section className="pricing-section" id="pricing">
         <div className="section-tag" style={{ textAlign: 'center' }}>Pricing</div>
         <h2 className="section-title" style={{ marginBottom: 12 }}>Simple, honest pricing.</h2>
@@ -415,9 +436,9 @@ export default function LandingPage() {
         <div className="pricing-grid">
 
           <div className="pricing-card">
-            <div className="plan-name">Starter</div>
-            <div className="plan-price">$25</div>
-            <div className="plan-period">per month · billed monthly</div>
+            <div className="plan-name">Monthly</div>
+            <div className="plan-price">$15</div>
+            <div className="plan-period">per month · cancel anytime</div>
             <div className="plan-divider" />
             <ul className="plan-features">
               <li><span className="check">✓</span> 3 alert subscriptions</li>
@@ -431,27 +452,27 @@ export default function LandingPage() {
           </div>
 
           <div className="pricing-card featured">
-            <div className="popular-badge">Most Popular</div>
-            <div className="plan-name">Pro</div>
-            <div className="plan-price">$49</div>
-            <div className="plan-period">per month · billed monthly</div>
+            <div className="popular-badge">Best Value</div>
+            <div className="plan-name">Annual</div>
+            <div className="plan-price">$149</div>
+            <div className="plan-period">per year · save $31</div>
             <div className="plan-divider" />
             <ul className="plan-features">
-              <li><span className="check">✓</span> 10 alert subscriptions</li>
+              <li><span className="check">✓</span> 3 alert subscriptions</li>
               <li><span className="check">✓</span> All 13 filter types</li>
               <li><span className="check">✓</span> Instant Telegram alerts</li>
               <li><span className="check">✓</span> All 5 Australian states</li>
               <li><span className="check">✓</span> Live search — trainers & sires</li>
-              <li><span className="check">✓</span> Sales data in alerts</li>
-              <li><span className="check">✓</span> Priority support</li>
+              <li><span className="check">✓</span> Test alert button</li>
             </ul>
             <a href="https://stallion-alert-v2.vercel.app/login" className="plan-btn plan-btn-blue">Start Free Trial</a>
           </div>
 
         </div>
-        <p className="pricing-note">7-day free trial on all plans · No credit card required · Cancel anytime</p>
+        <p className="pricing-note">7-day free trial · No credit card required · Cancel anytime</p>
       </section>
 
+      {/* CTA */}
       <section className="cta-section">
         <div className="cta-inner">
           <h2 className="cta-title">Start tracking what matters.</h2>
@@ -461,6 +482,7 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* FOOTER */}
       <div className="footer">
         <div className="footer-logo">TrackFeed</div>
         <div className="footer-note">Australian Thoroughbred Racing Intelligence · © 2026</div>
