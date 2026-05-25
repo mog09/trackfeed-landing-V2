@@ -467,49 +467,84 @@ export default function LandingPage() {
       </section>
 
       {/* PRICING */}
-      <section className="pricing-section" id="pricing">
+      <section className="pricing-section" id="pricing" style={{ maxWidth: 1100 }}>
         <div className="section-tag" style={{ textAlign: 'center' }}>Pricing</div>
         <h2 className="section-title" style={{ marginBottom: 12 }}>Simple, honest pricing.</h2>
-        <p style={{ fontSize: 16, color: '#6E6E73' }}>Start free. Upgrade when you're ready.</p>
-        <div className="pricing-grid">
+        <p style={{ fontSize: 16, color: '#6E6E73' }}>Start free. No lock-in. Cancel anytime.</p>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56, textAlign: 'left' }}>
+
           <div className="pricing-card">
-            <div className="plan-name">Monthly</div>
+            <div className="plan-name">Individual · Monthly</div>
             <div className="plan-price">$15</div>
             <div className="plan-period">per month · cancel anytime</div>
+            <div style={{ fontSize: 13, color: '#34C759', fontWeight: 600, marginBottom: 4 }}>Less than 50¢ a day</div>
             <div className="plan-divider" />
             <ul className="plan-features">
+              <li><span className="check">✓</span> 1 user</li>
               <li><span className="check">✓</span> 3 alert subscriptions</li>
               <li><span className="check">✓</span> 15+ filter types</li>
               <li><span className="check">✓</span> Instant Telegram alerts</li>
-              <li><span className="check">✓</span> All 5 Australian states</li>
-              <li><span className="check">✓</span> Live search — 65,000+ horses</li>
               <li><span className="check">✓</span> Bloodstock sales data</li>
-              <li><span className="check">✓</span> Vendor & sales company filters</li>
-              <li><span className="check">✓</span> Edit alerts anytime</li>
+              <li><span className="check">✓</span> All 5 Australian states</li>
             </ul>
             <a href="https://stallion-alert-v2.vercel.app/login" className="plan-btn plan-btn-dark">Start Free Trial</a>
           </div>
 
           <div className="pricing-card featured">
             <div className="popular-badge">Best Value</div>
-            <div className="plan-name">Annual</div>
+            <div className="plan-name">Individual · Annual</div>
             <div className="plan-price">$149</div>
             <div className="plan-period">per year · save $31</div>
+            <div style={{ fontSize: 13, color: '#34C759', fontWeight: 600, marginBottom: 4 }}>Just $2.86 a week</div>
             <div className="plan-divider" />
             <ul className="plan-features">
+              <li><span className="check">✓</span> 1 user</li>
               <li><span className="check">✓</span> 3 alert subscriptions</li>
               <li><span className="check">✓</span> 15+ filter types</li>
               <li><span className="check">✓</span> Instant Telegram alerts</li>
-              <li><span className="check">✓</span> All 5 Australian states</li>
-              <li><span className="check">✓</span> Live search — 65,000+ horses</li>
               <li><span className="check">✓</span> Bloodstock sales data</li>
-              <li><span className="check">✓</span> Vendor & sales company filters</li>
-              <li><span className="check">✓</span> Edit alerts anytime</li>
+              <li><span className="check">✓</span> All 5 Australian states</li>
             </ul>
             <a href="https://stallion-alert-v2.vercel.app/login" className="plan-btn plan-btn-blue">Start Free Trial</a>
           </div>
+
+          <div className="pricing-card" style={{ borderColor: '#1D1D1F', background: '#FAFAFA' }}>
+            <div className="plan-name" style={{ color: '#1D1D1F' }}>Team</div>
+            <div className="plan-price">$75</div>
+            <div className="plan-period">per month · up to 10 users</div>
+            <div style={{ fontSize: 13, color: '#34C759', fontWeight: 600, marginBottom: 4 }}>From $7.50 per person</div>
+            <div className="plan-divider" />
+            <ul className="plan-features">
+              <li><span className="check">✓</span> 5–10 users</li>
+              <li><span className="check">✓</span> 3 alerts per user</li>
+              <li><span className="check">✓</span> 15+ filter types</li>
+              <li><span className="check">✓</span> Instant Telegram alerts</li>
+              <li><span className="check">✓</span> Bloodstock sales data</li>
+              <li><span className="check">✓</span> Single monthly invoice</li>
+            </ul>
+            <a href="mailto:morgan.thomas018@gmail.com?subject=TrackFeed Team Plan" className="plan-btn" style={{ background: '#1D1D1F', color: '#fff' }}>Get Started →</a>
+          </div>
+
         </div>
-        <p className="pricing-note">7-day free trial · Cancel anytime via the app · Australian racing only</p>
+
+        <div style={{
+          marginTop: 20, padding: '20px 32px',
+          background: '#F5F5F7', borderRadius: 16,
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          flexWrap: 'wrap', gap: 16
+        }}>
+          <div>
+            <div style={{ fontSize: 16, fontWeight: 600, color: '#1D1D1F', marginBottom: 4 }}>10+ users?</div>
+            <div style={{ fontSize: 14, color: '#6E6E73' }}>Custom pricing for large teams, studs and racing organisations.</div>
+          </div>
+          <a href="mailto:morgan.thomas018@gmail.com?subject=TrackFeed Enterprise Enquiry"
+            style={{ padding: '12px 28px', background: '#007AFF', color: '#fff', borderRadius: 980, fontSize: 14, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap' }}>
+            Enquire Now →
+          </a>
+        </div>
+
+        <p className="pricing-note">7-day free trial on individual plans · Team plans start immediately · Cancel anytime</p>
       </section>
 
       {/* CTA */}
