@@ -96,7 +96,7 @@ export default function LandingPage() {
         }
         .stats-inner {
           max-width: 900px; margin: 0 auto;
-          display: grid; grid-template-columns: repeat(3, 1fr);
+          display: grid; grid-template-columns: repeat(4, 1fr);
         }
         .stat { text-align: center; padding: 0 24px; border-right: 0.5px solid #D2D2D7; }
         .stat:last-child { border-right: none; }
@@ -113,6 +113,11 @@ export default function LandingPage() {
         .mockup-text .tag { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #007AFF; margin-bottom: 16px; }
         .mockup-text h2 { font-size: 40px; font-weight: 700; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 18px; color: #1D1D1F; }
         .mockup-text p { font-size: 16px; color: #6E6E73; line-height: 1.65; margin-bottom: 16px; }
+        .tg-download { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+        .tg-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 10px; font-size: 13px; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+        .tg-btn:hover { opacity: 0.85; }
+        .tg-btn-ios { background: #000; color: #fff; }
+        .tg-btn-android { background: #01875F; color: #fff; }
 
         .phone-wrap { display: flex; justify-content: center; }
         .phone {
@@ -130,7 +135,7 @@ export default function LandingPage() {
         .tg-avatar { width: 32px; height: 32px; background: #007AFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0; }
         .tg-name { color: #fff; font-size: 14px; font-weight: 600; }
         .tg-status { color: #48484A; font-size: 11px; }
-        .tg-body { background: #000; padding: 16px 12px; min-height: 340px; }
+        .tg-body { background: #000; padding: 16px 12px; min-height: 380px; }
         .msg-bubble { background: #1C1C1E; border-radius: 18px 18px 18px 4px; padding: 14px 16px; font-size: 12.5px; line-height: 1.65; color: #E8E8ED; margin-bottom: 8px; }
         .msg-label { color: #007AFF; font-weight: 700; font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
         .msg-horse { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 10px; letter-spacing: -0.3px; }
@@ -138,6 +143,9 @@ export default function LandingPage() {
         .msg-row:last-of-type { border-bottom: none; }
         .msg-key { color: #636366; font-size: 12px; }
         .msg-val { color: #E8E8ED; font-size: 12px; font-weight: 500; text-align: right; max-width: 150px; }
+        .msg-sales { margin-top: 10px; padding-top: 10px; border-top: 0.5px solid rgba(255,255,255,0.08); }
+        .msg-sales-label { color: #007AFF; font-size: 11px; font-weight: 700; margin-bottom: 5px; }
+        .msg-sales-row { color: #8E8E93; font-size: 11px; line-height: 1.5; }
         .msg-filters { margin-top: 10px; padding-top: 10px; border-top: 0.5px solid rgba(255,255,255,0.08); }
         .msg-filter-label { color: #48484A; font-size: 11px; margin-bottom: 6px; }
         .msg-chip { display: inline-block; background: rgba(0,122,255,0.2); color: #007AFF; padding: 3px 8px; border-radius: 5px; font-size: 11px; font-weight: 600; margin: 2px 2px 0 0; }
@@ -165,6 +173,8 @@ export default function LandingPage() {
         }
         .ftag:hover { background: #007AFF; color: #fff; border-color: #007AFF; }
         .ftag.highlight { background: #007AFF; color: #fff; border-color: #007AFF; }
+        .ftag.sales { background: #F3E5FF; color: #5B1FBF; border-color: #D4A8FF; }
+        .ftag.sales:hover { background: #7B2FFF; color: #fff; border-color: #7B2FFF; }
 
         .who-section { background: #000; padding: 100px 32px; color: #fff; }
         .who-inner { max-width: 1000px; margin: 0 auto; }
@@ -218,8 +228,9 @@ export default function LandingPage() {
           .nav-links { display: none; }
           .nav { padding: 0 20px; }
           .hero { padding: 100px 20px 70px; }
-          .stats-inner { grid-template-columns: 1fr; gap: 24px; }
+          .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
           .stat { border-right: none; border-bottom: 0.5px solid #D2D2D7; padding-bottom: 20px; }
+          .stat:nth-child(odd) { border-right: 0.5px solid #D2D2D7; }
           .stat:last-child { border-bottom: none; }
           .mockup-section { grid-template-columns: 1fr; gap: 48px; padding: 70px 20px; }
           .steps { grid-template-columns: 1fr; gap: 2px; }
@@ -254,20 +265,20 @@ export default function LandingPage() {
           Know the moment your horse <span>wins.</span>
         </h1>
         <p className="hero-sub">
-          Real-time winner alerts to your Telegram. Filter by sire, trainer, race class, state and more. No noise — just the results that matter.
+          Real-time winner alerts to your Telegram. Filter by sire, trainer, vendor, race class, state and more. No noise — just the results that matter.
         </p>
         <div className="hero-actions">
           <a href="#pricing" className="btn-primary">Start Free Trial</a>
           <a href="#how-it-works" className="btn-ghost">See how it works →</a>
         </div>
-        <p className="hero-note">No credit card required · 7-day free trial · Cancel anytime</p>
+        <p className="hero-note">7-day free trial · Cancel anytime · Australian racing only</p>
       </section>
 
       {/* STATS */}
       <div className="stats-bar">
         <div className="stats-inner">
           <div className="stat">
-            <div className="stat-num"><span>3</span> min</div>
+            <div className="stat-num"><span>2</span> min</div>
             <div className="stat-label">Alert polling interval</div>
           </div>
           <div className="stat">
@@ -275,8 +286,12 @@ export default function LandingPage() {
             <div className="stat-label">Australian states covered</div>
           </div>
           <div className="stat">
-            <div className="stat-num"><span>13</span>+</div>
+            <div className="stat-num"><span>15</span>+</div>
             <div className="stat-label">Filter types available</div>
+          </div>
+          <div className="stat">
+            <div className="stat-num"><span>65k</span>+</div>
+            <div className="stat-label">Horses in database</div>
           </div>
         </div>
       </div>
@@ -286,8 +301,18 @@ export default function LandingPage() {
         <div className="mockup-text">
           <div className="tag">Live Alerts</div>
           <h2>Instant. Professional. On your phone.</h2>
-          <p>The moment a winner matches your filters, TrackFeed fires a Telegram alert with full breeding details, race information, and exactly which of your filters triggered it.</p>
-          <p style={{ color: '#AEAEB2', fontSize: 14 }}>Delivered via Telegram — works on any device, no additional apps required.</p>
+          <p>The moment a winner matches your filters, TrackFeed fires a Telegram alert with full breeding details, race information, auction history, and exactly which of your filters triggered it.</p>
+          <p style={{ color: '#6E6E73', fontSize: 15, marginBottom: 12 }}>
+            Delivered via Telegram — a free messaging app available on iPhone and Android. Download it, connect in 30 seconds, and alerts arrive instantly.
+          </p>
+          <div className="tg-download">
+            <a className="tg-btn tg-btn-ios" href="https://apps.apple.com/app/telegram-messenger/id686449807" target="_blank" rel="noopener noreferrer">
+              🍎 App Store
+            </a>
+            <a className="tg-btn tg-btn-android" href="https://play.google.com/store/apps/details?id=org.telegram.messenger" target="_blank" rel="noopener noreferrer">
+              ▶ Google Play
+            </a>
+          </div>
         </div>
         <div className="phone-wrap">
           <div className="phone">
@@ -299,21 +324,26 @@ export default function LandingPage() {
               </div>
               <div className="tg-body">
                 <div className="msg-bubble">
-                  <div className="msg-label">Winner Alert</div>
+                  <div className="msg-label">🏇 Winner Alert</div>
                   <div className="msg-horse">Semelle Rouge</div>
                   <div className="msg-row"><span className="msg-key">Race</span><span className="msg-val">R7 — Werribee (1200m)</span></div>
                   <div className="msg-row"><span className="msg-key">Class</span><span className="msg-val">BM56</span></div>
                   <div className="msg-row"><span className="msg-key">Prize</span><span className="msg-val">$35,000</span></div>
                   <div className="msg-row"><span className="msg-key">Sire</span><span className="msg-val">I Am Invincible</span></div>
-                  <div className="msg-row"><span className="msg-key">Dam</span><span className="msg-val">Lubiton</span></div>
-                  <div className="msg-row"><span className="msg-key">Trainer</span><span className="msg-val">Mick Price & M. Kent</span></div>
+                  <div className="msg-row"><span className="msg-key">Trainer</span><span className="msg-val">Mick Price</span></div>
+                  <div className="msg-row"><span className="msg-key">Jockey</span><span className="msg-val">J. McDonald</span></div>
                   <div className="msg-row"><span className="msg-key">SP</span><span className="msg-val">$3.80</span></div>
+                  <div className="msg-sales">
+                    <div className="msg-sales-label">Sales History</div>
+                    <div className="msg-sales-row">Inglis Easter Yearling 2023 · $320,000</div>
+                    <div className="msg-sales-row">Vendor: Coolmore Stud · Buyer: Magic Bloodstock</div>
+                  </div>
                   <div className="msg-filters">
                     <div className="msg-filter-label">Matched your filters:</div>
                     <span className="msg-chip">✓ I Am Invincible</span>
                     <span className="msg-chip">✓ Victoria</span>
                   </div>
-                  <div className="msg-time">Wed 14 May 2026 · VIC</div>
+                  <div className="msg-time">Mon 25 May 2026 · VIC</div>
                 </div>
               </div>
             </div>
@@ -329,18 +359,18 @@ export default function LandingPage() {
           <div className="steps">
             <div className="step">
               <div className="step-num">01</div>
-              <div className="step-title">Create your account</div>
-              <p className="step-desc">Sign up with your email. No credit card required to start your free trial. Takes 30 seconds.</p>
+              <div className="step-title">Download Telegram & create account</div>
+              <p className="step-desc">Telegram is a free messaging app — download it on iPhone or Android, then sign up to TrackFeed. Takes 2 minutes.</p>
             </div>
             <div className="step">
               <div className="step-num">02</div>
-              <div className="step-title">Connect Telegram</div>
-              <p className="step-desc">Tap one link to connect your Telegram. Alerts arrive instantly — no extra apps, no configuration.</p>
+              <div className="step-title">Connect & set your filters</div>
+              <p className="step-desc">Connect your Telegram in one tap, then build your alert — search for sires, trainers, vendors and more. Mix and match to match exactly what you track.</p>
             </div>
             <div className="step">
               <div className="step-num">03</div>
-              <div className="step-title">Set your filters</div>
-              <p className="step-desc">Search for your sires, trainers, and race criteria. The moment a match wins, you'll know.</p>
+              <div className="step-title">Receive instant winner alerts</div>
+              <p className="step-desc">The moment a winner matches your filters, a Telegram alert fires with full breeding details, race info, and auction history.</p>
             </div>
           </div>
         </div>
@@ -350,8 +380,8 @@ export default function LandingPage() {
       <section className="filters-section" id="filters">
         <div className="section-tag">Filter By Anything</div>
         <h2 className="section-title">Your intelligence.<br />Your rules.</h2>
-        <p style={{ fontSize: 17, color: '#6E6E73', lineHeight: 1.65, maxWidth: 520, marginBottom: 8 }}>
-          Build alerts around any combination. All filters must match — so you only hear about the races that matter to you.
+        <p style={{ fontSize: 17, color: '#6E6E73', lineHeight: 1.65, maxWidth: 560, marginBottom: 8 }}>
+          Build alerts around any combination. Add multiple values of the same type to match any of them. Different types must all match — so you only hear about the races that matter.
         </p>
         <div className="filter-tags">
           {[
@@ -359,6 +389,7 @@ export default function LandingPage() {
             { label: 'Dam', active: false },
             { label: 'Trainer', active: true },
             { label: 'Jockey', active: false },
+            { label: 'Horse', active: false },
             { label: 'Group 1', active: true },
             { label: 'Group 2', active: false },
             { label: 'Group 3', active: false },
@@ -382,10 +413,17 @@ export default function LandingPage() {
             { label: 'Min Distance', active: false },
             { label: 'Max Distance', active: false },
             { label: 'Course', active: false },
-          ].map(f => (
-            <div key={f.label} className={`ftag ${f.active ? 'highlight' : ''}`}>{f.label}</div>
+            { label: 'Vendor', active: false, sales: true },
+            { label: 'Magic Millions', active: false, sales: true },
+            { label: 'Inglis', active: false, sales: true },
+            { label: 'Karaka (NZB)', active: false, sales: true },
+          ].map((f: any) => (
+            <div key={f.label} className={`ftag ${f.active ? 'highlight' : ''} ${f.sales ? 'sales' : ''}`}>{f.label}</div>
           ))}
         </div>
+        <p style={{ fontSize: 13, color: '#AEAEB2', marginTop: 20 }}>
+          Purple filters use real-time bloodstock sales data · All other filters match instantly
+        </p>
       </section>
 
       {/* WHO IT'S FOR */}
@@ -402,7 +440,7 @@ export default function LandingPage() {
             <div className="who-card">
               <div className="who-tag">Bloodstock Agents</div>
               <div className="who-title">Be on the front foot with racetrack results.</div>
-              <p className="who-desc">Know the information before your clients do.</p>
+              <p className="who-desc">Know the information before your clients do. Sales history included in every alert.</p>
             </div>
             <div className="who-card">
               <div className="who-tag">Breeders</div>
@@ -434,7 +472,6 @@ export default function LandingPage() {
         <h2 className="section-title" style={{ marginBottom: 12 }}>Simple, honest pricing.</h2>
         <p style={{ fontSize: 16, color: '#6E6E73' }}>Start free. Upgrade when you're ready.</p>
         <div className="pricing-grid">
-
           <div className="pricing-card">
             <div className="plan-name">Monthly</div>
             <div className="plan-price">$15</div>
@@ -442,11 +479,13 @@ export default function LandingPage() {
             <div className="plan-divider" />
             <ul className="plan-features">
               <li><span className="check">✓</span> 3 alert subscriptions</li>
-              <li><span className="check">✓</span> All 13 filter types</li>
+              <li><span className="check">✓</span> 15+ filter types</li>
               <li><span className="check">✓</span> Instant Telegram alerts</li>
               <li><span className="check">✓</span> All 5 Australian states</li>
-              <li><span className="check">✓</span> Live search — trainers & sires</li>
-              <li><span className="check">✓</span> Test alert button</li>
+              <li><span className="check">✓</span> Live search — 65,000+ horses</li>
+              <li><span className="check">✓</span> Bloodstock sales data</li>
+              <li><span className="check">✓</span> Vendor & sales company filters</li>
+              <li><span className="check">✓</span> Edit alerts anytime</li>
             </ul>
             <a href="https://stallion-alert-v2.vercel.app/login" className="plan-btn plan-btn-dark">Start Free Trial</a>
           </div>
@@ -459,17 +498,18 @@ export default function LandingPage() {
             <div className="plan-divider" />
             <ul className="plan-features">
               <li><span className="check">✓</span> 3 alert subscriptions</li>
-              <li><span className="check">✓</span> All 13 filter types</li>
+              <li><span className="check">✓</span> 15+ filter types</li>
               <li><span className="check">✓</span> Instant Telegram alerts</li>
               <li><span className="check">✓</span> All 5 Australian states</li>
-              <li><span className="check">✓</span> Live search — trainers & sires</li>
-              <li><span className="check">✓</span> Test alert button</li>
+              <li><span className="check">✓</span> Live search — 65,000+ horses</li>
+              <li><span className="check">✓</span> Bloodstock sales data</li>
+              <li><span className="check">✓</span> Vendor & sales company filters</li>
+              <li><span className="check">✓</span> Edit alerts anytime</li>
             </ul>
             <a href="https://stallion-alert-v2.vercel.app/login" className="plan-btn plan-btn-blue">Start Free Trial</a>
           </div>
-
         </div>
-        <p className="pricing-note">7-day free trial · No credit card required · Cancel anytime</p>
+        <p className="pricing-note">7-day free trial · Cancel anytime via the app · Australian racing only</p>
       </section>
 
       {/* CTA */}
@@ -478,7 +518,7 @@ export default function LandingPage() {
           <h2 className="cta-title">Start tracking what matters.</h2>
           <p className="cta-sub">Join racing professionals who never miss a winner. Set up in 3 minutes.</p>
           <a href="https://stallion-alert-v2.vercel.app/login" className="btn-primary" style={{ fontSize: 17, padding: '16px 44px' }}>Start Free Trial</a>
-          <p style={{ marginTop: 18, fontSize: 13, color: '#AEAEB2' }}>No credit card required · Australian racing only · Cancel anytime</p>
+          <p style={{ marginTop: 18, fontSize: 13, color: '#AEAEB2' }}>7-day free trial · Cancel anytime · Australian racing only</p>
         </div>
       </section>
 
