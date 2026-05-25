@@ -255,7 +255,7 @@ export default function LandingPage() {
           <a href="#filters" className="nav-link">Filters</a>
           <a href="#pricing" className="nav-link">Pricing</a>
         </div>
-        <a href="https://stallion-alert-v2.vercel.app/login" className="nav-cta">Get Started</a>
+        <div style={{ display: "flex", gap: 10, alignItems: "center" }}><a href="https://stallion-alert-v2.vercel.app/login" style={{ fontSize: 14, fontWeight: 500, color: "#007AFF", textDecoration: "none" }}>Log In</a><a href="https://stallion-alert-v2.vercel.app/login" className="nav-cta">Get Started</a></div>
       </nav>
 
       {/* HERO */}
