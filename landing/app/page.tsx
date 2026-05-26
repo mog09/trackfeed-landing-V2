@@ -35,7 +35,7 @@ export default function LandingPage() {
           border-bottom: 0.5px solid rgba(0,0,0,0.12);
         }
         .nav-logo { font-size: 18px; font-weight: 700; color: #1D1D1F; letter-spacing: -0.5px; }
-        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links { display: none; }
         .nav-link { font-size: 14px; font-weight: 400; color: #555; text-decoration: none; }
         .nav-actions { display: flex; gap: 10px; align-items: center; }
         .nav-login { font-size: 14px; font-weight: 500; color: #007AFF; text-decoration: none; }
@@ -274,6 +274,7 @@ export default function LandingPage() {
           .support-section { padding: 100px 32px; }
           .support-cards { flex-direction: row; }
           .enterprise-bar { flex-direction: row; justify-content: space-between; align-items: center; }
+          .nav-links { display: flex; gap: 24px; align-items: center; }
           .support-card { flex: 1; }
           .cta-section { padding: 100px 32px; }
           .footer { flex-direction: row; justify-content: space-between; align-items: center; padding: 28px 32px; text-align: left; }
