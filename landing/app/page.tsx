@@ -12,7 +12,15 @@ export default function LandingPage() {
           color: #1D1D1F;
           -webkit-font-smoothing: antialiased;
           overflow-x: hidden;
-          max-width: 100vw;
+          width: 100%;
+          max-width: 100%;
+        }
+        html {
+          overflow-x: hidden;
+          width: 100%;
+        }
+        section, div, nav, footer {
+          max-width: 100%;
         }
 
         /* NAV */
@@ -97,6 +105,7 @@ export default function LandingPage() {
           border-bottom: 0.5px solid #D2D2D7;
           padding: 24px 20px;
           overflow-x: hidden;
+          width: 100%;
         }
         .stats-inner {
           max-width: 900px; margin: 0 auto;
@@ -122,7 +131,7 @@ export default function LandingPage() {
         .tg-btn-ios { background: #000; color: #fff; }
         .tg-btn-android { background: #01875F; color: #fff; }
 
-        .phone-wrap { display: flex; justify-content: center; }
+        .phone-wrap { display: flex; justify-content: center; width: 100%; overflow: hidden; }
         .phone {
           background: #1C1C1E; border-radius: 44px; padding: 16px; width: min(280px, 85vw);
           box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 30px 60px rgba(0,0,0,0.2);
@@ -165,7 +174,7 @@ export default function LandingPage() {
 
         /* FILTERS */
         .filters-section { padding: 70px 20px; max-width: 1000px; margin: 0 auto; }
-        .filter-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+        .filter-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; width: 100%; overflow: hidden; }
         .ftag { padding: 8px 16px; background: #F5F5F7; border-radius: 100px; font-size: 13px; font-weight: 500; color: #3A3A3C; border: 0.5px solid #D2D2D7; cursor: default; }
         .ftag.highlight { background: #007AFF; color: #fff; border-color: #007AFF; }
         .ftag.sales { background: #F3E5FF; color: #5B1FBF; border-color: #D4A8FF; }
@@ -188,8 +197,8 @@ export default function LandingPage() {
         .pricing-section .section-title { text-align: center; }
         .pricing-section .section-tag { text-align: center; }
         .pricing-subtitle { font-size: 16px; color: '#6E6E73'; text-align: center; margin-bottom: 40px; }
-        .pricing-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
-        .pricing-card { border: 0.5px solid #D2D2D7; border-radius: 20px; padding: 28px 24px; position: relative; background: #fff; }
+        .pricing-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; width: 100%; }
+        .pricing-card { border: 0.5px solid #D2D2D7; border-radius: 20px; padding: 28px 24px; position: relative; background: #fff; width: 100%; box-sizing: border-box; }
         .pricing-card.featured { border-color: #007AFF; border-width: 1.5px; background: #F5F9FF; }
         .pricing-card.team-card { border-color: #1D1D1F; background: #FAFAFA; }
         .popular-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: #007AFF; color: #fff; padding: 4px 16px; border-radius: 100px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; white-space: nowrap; }
@@ -206,7 +215,7 @@ export default function LandingPage() {
         .plan-btn-blue { background: #007AFF; color: #fff; }
         .plan-btn-dark { background: #1D1D1F; color: #fff; }
         .plan-btn-black { background: #1D1D1F; color: #fff; }
-        .enterprise-bar { margin-top: 16px; padding: 18px 20px; background: #F5F5F7; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .enterprise-bar { margin-top: 16px; padding: 18px 20px; background: #F5F5F7; border-radius: 14px; display: flex; flex-direction: column; gap: 12px; width: 100%; box-sizing: border-box; }
         .enterprise-text { font-size: 15px; font-weight: 600; color: #1D1D1F; }
         .enterprise-sub { font-size: 13px; color: #6E6E73; margin-top: 2px; }
         .enterprise-btn { padding: 10px 20px; background: #007AFF; color: #fff; border-radius: 980px; font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap; }
@@ -217,7 +226,7 @@ export default function LandingPage() {
         .support-inner { max-width: 700px; margin: 0 auto; text-align: center; }
         .support-title { font-size: clamp(24px, 4vw, 32px); font-weight: 700; letter-spacing: -0.8px; color: #1D1D1F; margin-bottom: 12px; }
         .support-desc { font-size: 16px; color: #6E6E73; line-height: 1.6; margin-bottom: 28px; }
-        .support-cards { display: flex; flex-direction: column; gap: 12px; text-align: left; }
+        .support-cards { display: flex; flex-direction: column; gap: 12px; text-align: left; width: 100%; }
         .support-card { background: #fff; border-radius: 14px; padding: 20px 22px; display: flex; align-items: flex-start; gap: 14px; box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
         .support-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
         .support-card-title { font-size: 15px; font-weight: 600; color: #1D1D1F; margin-bottom: 4px; }
@@ -264,6 +273,7 @@ export default function LandingPage() {
           .pricing-card { flex: 1; }
           .support-section { padding: 100px 32px; }
           .support-cards { flex-direction: row; }
+          .enterprise-bar { flex-direction: row; justify-content: space-between; align-items: center; }
           .support-card { flex: 1; }
           .cta-section { padding: 100px 32px; }
           .footer { flex-direction: row; justify-content: space-between; align-items: center; padding: 28px 32px; text-align: left; }
